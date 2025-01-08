@@ -17,7 +17,7 @@
   "connections": {
     "neo4j": {
       "type": "neo4j",
-      "dbUri": "{{NEO4J_URI}}",
+      "dbUri": "bolt://3.239.27.103:7687",
       "username": "{{USERNAME}}",
       "password": "{{PASSWORD}}"
     }
