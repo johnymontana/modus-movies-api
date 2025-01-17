@@ -123,7 +123,10 @@ export function findSimilarMovies(title: string, num: i16): MovieResult[] {
       title: searchResult.title,
       plot: searchResult.plot,
       rating: searchResult.imdbRating,
-      id: searchResult.imdbId
+      id: searchResult.imdbId,
+      poster: searchResult.poster,
+      actors: [(searchResult)<-[:ACTED_IN]-(a:Actor) | a.name],
+      genres: [(searchResult)-[:IN_GENRE]->(g:Genre) | g.name]
     },
     score: score
     }) AS movieResults
